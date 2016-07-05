@@ -1,6 +1,3 @@
 node_modules
 .DS_Store
 public
-resources/vendor
-resources/scripts/js
-resources/styles/css
