@@ -5,16 +5,16 @@
  */
 
 var gulp = require('gulp'),
-    webserver = require('gulp-webserver'),
     uglify = require('gulp-uglify'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     cleanCSS = require('gulp-clean-css'),
-    watch = require('gulp-watch'),
     sourcemaps = require('gulp-sourcemaps'),
     babel = require('gulp-babel'),
     notify = require('gulp-notify'),
-    concat = require('gulp-concat');
+    concat = require('gulp-concat'),
+    connect = require('gulp-connect-php'),
+    browserSync = require('browser-sync');
 
 /*
  *
@@ -91,7 +91,24 @@ gulp.task('images', function() {});
 
 gulp.task('watchers', function(){
   gulp.watch(paths.scssSrc + '**/*.scss', ['scss']);
-  gulp.watch([paths.jsSrc + '**/*.js', '!vendor/*.js'], ['js'])
+  gulp.watch([paths.jsSrc + '**/*.js', '!vendor/*.js'], ['js']);
+  gulp.watch([
+    paths.dest+'**/*.php',
+    paths.dest+'**/*.css',
+    paths.dest+'**/*.js'
+  ]).on('change', function () {
+    browserSync.reload();
+  });
+});
+
+gulp.task('webserver', function() {
+  connect.server({
+    base: paths.dest
+  }, function (){
+    browserSync({
+      proxy: '127.0.0.1:8000'
+    });
+  });
 });
 
 gulp.task('default', [
@@ -101,5 +118,6 @@ gulp.task('default', [
   'html',
   'css',
   'images',
+  'webserver',
   'watchers'
 ]);
