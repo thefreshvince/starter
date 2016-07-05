@@ -13,7 +13,8 @@ var gulp = require('gulp'),
     watch = require('gulp-watch'),
     sourcemaps = require('gulp-sourcemaps'),
     babel = require('gulp-babel'),
-    notify = require('gulp-notify');
+    notify = require('gulp-notify'),
+    concat = require('gulp-concat');
 
 /*
  *
@@ -61,14 +62,26 @@ gulp.task('scss', function() {
 
 gulp.task('js', function() {
 
-  return gulp.src([paths.jsSrc + '**/*.js'])
-    .pipe(watch(paths.jsSrc + '**/*.js'))
+  return gulp.src([paths.jsSrc + '**/*.js', '!vendor/*.js'])
+    .pipe(sourcemaps.init())
+    .pipe(babel())
+    .pipe(uglify())
+    .pipe(concat('all.js'))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(paths.jsDest))
+    .pipe(notify('Processed JS'));
+
+});
+
+gulp.task('js_vendors', function() {
+
+  return gulp.src([paths.jsSrc + 'vendor/**/*.js'])
     .pipe(sourcemaps.init())
     .pipe(babel())
     .pipe(uglify())
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest(paths.jsDest))
-    .pipe(notify('Processed JS'));
+    .pipe(gulp.dest(paths.jsDest + 'vendor'))
+    .pipe(notify('Processed JS Vendors'));
 
 });
 
@@ -77,12 +90,14 @@ gulp.task('css', function() {});
 gulp.task('images', function() {});
 
 gulp.task('watchers', function(){
-  return gulp.watch(paths.scssSrc + '**/*.scss', ['scss']);
+  gulp.watch(paths.scssSrc + '**/*.scss', ['scss']);
+  gulp.watch([paths.jsSrc + '**/*.js', '!vendor/*.js'], ['js'])
 });
 
 gulp.task('default', [
   'scss',
   'js',
+  'js_vendors',
   'html',
   'css',
   'images',
