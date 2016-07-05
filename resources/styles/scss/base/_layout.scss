@@ -1,0 +1,79 @@
+.container{
+	box-sizing: border-box;
+  position: relative;
+  max-width: 980px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 $gutter-width/2;
+
+  &:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+.block{
+	box-sizing: border-box;
+	padding: $gutter-width/2;
+	display: block;
+	position: relative;
+	float: left;
+}
+
+	@each $size in $layout {
+		$size_class: '';
+
+		@if $size > 66 and $size < 67 {
+			$size_class: 'two-third';
+		} @else if $size > 33 and $size < 34 {
+			$size_class: 'one-third';
+		} @else {
+			$size_class: $size;
+		}
+
+		.block--#{$size_class} {
+			@extend .block;
+			width: 1% * $size;
+
+			@include break(mobile-port,1) {
+				&-mp{
+					width: 1% * $size;
+				}
+			}
+
+			@include break(mobile-land,1) {
+				&-ml{
+					width: 1% * $size;
+				}
+			}
+
+			@include break(tablet-port,1) {
+				&-tp{
+					width: 1% * $size;
+				}
+			}
+		}
+	}
+
+	.block--no-pad{
+		padding: 0;
+	}
+
+	.block--no-pad-right{
+		padding-right: 0px;
+	}
+
+	.block--no-pad-left{
+		padding-left: 0px;
+	}
+
+	.block--no-pad-top{
+		padding-top: 0px;
+	}
+
+	.block--no-pad-bottom{
+		padding-bottom: 0px;
+	}

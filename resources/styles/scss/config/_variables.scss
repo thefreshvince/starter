@@ -1,0 +1,57 @@
+/*
+
+	Colors
+
+*/
+
+	$colors-black: #000;
+	$colors-white: #fff;
+
+/*
+
+	Fonts
+
+*/
+
+	$fonts: (
+		0: (
+			font-family:  #{"Cutive Mono, HelveticaNeue, Helvetica Neue, Helvetica, Arial, sans-serif"},
+			font-style: normal,
+			font-weight: normal
+		)
+	);
+
+/*
+
+	Media Queries
+
+*/
+
+	$mq: (
+		tablet-port: 959px,
+		mobile-land: 767px,
+		mobile-port: 479px
+	);
+
+/*
+
+	Layout sizes
+
+*/
+
+	$layout: (
+		100,
+		66.666666,
+		50,
+		33.333333,
+		25,
+		20
+	);
+
+/*
+
+	Gutters
+
+*/
+
+	$gutter-width: 20px;
