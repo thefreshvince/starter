@@ -14,7 +14,7 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     concat = require('gulp-concat'),
     connect = require('gulp-connect-php'),
-    browserSync = require('browser-sync');
+    browserSync = require('browser-sync').create();
 
 /*
  *
@@ -105,7 +105,8 @@ gulp.task('webserver', function() {
   connect.server({
     base: paths.dest
   }, function (){
-    browserSync({
+    browserSync.init({
+      baseDir: paths.dest,
       proxy: '127.0.0.1:8000'
     });
   });
