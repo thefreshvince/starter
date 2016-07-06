@@ -4,8 +4,10 @@
 
 */
 
-	$colors-black: #000;
-	$colors-white: #fff;
+$color-primary: #0A94A2;
+$color-secondary: #FB9F0F;
+$color-black: #030001;
+$color-white: #fff;
 
 /*
 
@@ -13,13 +15,13 @@
 
 */
 
-	$fonts: (
-		0: (
-			font-family:  #{"Cutive Mono, HelveticaNeue, Helvetica Neue, Helvetica, Arial, sans-serif"},
-			font-style: normal,
-			font-weight: normal
-		)
-	);
+$fonts: (
+	0: (
+		font-family:  #{"Cutive Mono, HelveticaNeue, Helvetica Neue, Helvetica, Arial, sans-serif"},
+		font-style: normal,
+		font-weight: normal
+	)
+);
 
 /*
 
@@ -27,11 +29,11 @@
 
 */
 
-	$mq: (
-		tablet-port: 959px,
-		mobile-land: 767px,
-		mobile-port: 479px
-	);
+$mq: (
+	tablet-port: 959px,
+	mobile-land: 767px,
+	mobile-port: 479px
+);
 
 /*
 
@@ -39,14 +41,16 @@
 
 */
 
-	$layout: (
-		100,
-		66.666666,
-		50,
-		33.333333,
-		25,
-		20
-	);
+$container-width: 980px;
+
+$layout: (
+	100,
+	66.666666,
+	50,
+	33.333333,
+	25,
+	20
+);
 
 /*
 
@@ -54,4 +58,20 @@
 
 */
 
-	$gutter-width: 20px;
+$gutter-width: 20px;
+
+/*
+
+	Header
+
+*/
+
+$header-height: 60px;
+
+/*
+
+	Main Navigation
+
+*/
+
+$nav-height: $header-height;
