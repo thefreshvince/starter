@@ -1,3 +1,17 @@
+/**
+ *  Vetically centers content (flexbox alternative) within a container with
+ *  with a height and width. (does not work in something with height or width
+ *  of 0 and container needs to be positioned relative/absolute/fixed)
+ *
+ *  Usage:
+ *  <div class="container">
+ *		<div class="v-center">
+ *			<div>
+ *				Your content here
+ *			</div>
+ *		</div>
+ *	</div>
+ */
 .v-center{
 	position: absolute;
 	width: 100%;
@@ -21,3 +35,5 @@
 		max-width: 90%;
 	}
 }
+
+//
