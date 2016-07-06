@@ -1,21 +1,6 @@
 .header{
-
+	position: relative;
+	width: 100%;
+	height: $header-height;
+	background: $color-primary;
 }
-
-	.header-logo{
-		display: block;
-		position: relative;
-		width: 198px;
-		height: 129px;
-	
-		img{
-			position: absolute;
-			width: 100%;
-			height: auto;
-		}
-
-		i{
-			display: block;
-			text-indent: -9999px;
-		}
-	}
