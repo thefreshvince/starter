@@ -25,7 +25,8 @@ var gulp = require('gulp'),
 var Paths = function(src){
       this.src = src;
       this.dest = './public/';
-      this.assets = this.dest+'assets/'
+      this.assets = this.dest+'assets/';
+      this.node = './node_modules/';
 
       this.scriptsSrc = this.src+'scripts/';
       this.markupSrc = this.src+'markup/';
