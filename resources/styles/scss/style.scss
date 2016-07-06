@@ -23,7 +23,7 @@ Tags: custom
 
 */
 
-	// Vendors here
+	@import "../../../node_modules/normalize.css/normalize.css";
 
 /*
 
@@ -61,3 +61,5 @@ Tags: custom
 	Components
 
 */
+
+	@import "components/main-nav";
