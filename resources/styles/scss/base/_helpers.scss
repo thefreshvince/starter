@@ -1,4 +1,5 @@
 /**
+ *
  *  Vetically centers content (flexbox alternative) within a container with
  *  with a height and width. (does not work in something with height or width
  *  of 0 and container needs to be positioned relative/absolute/fixed)
@@ -11,6 +12,7 @@
  *			</div>
  *		</div>
  *	</div>
+ *
  */
 .v-center{
 	position: absolute;
@@ -36,4 +38,26 @@
 	}
 }
 
-//
+/**
+ *
+ *  Hides the element on desktop resolutions
+ *
+ */
+.show-on-mobile{
+	display: none;
+
+	@include break(mobile-land) {
+		display: inherit;
+	}
+}
+
+/**
+ *
+ *  Hides the element on mobile resolutions
+ *
+ */
+.hide-on-mobile{
+	@include break(mobile-land) {
+		display: none;
+	}
+}
