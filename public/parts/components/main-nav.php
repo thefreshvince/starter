@@ -14,7 +14,7 @@
 
 <nav class="main-nav">
   <a href="#side-tap" class="side-tap show-on-mobile"></a>
-  <ul class="main-nav__list hide-on-mobile">
+  <ul class="main-nav__list side-tap__nav">
     <?php
 
       // Loop through the navigation elements
