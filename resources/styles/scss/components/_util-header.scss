@@ -1,0 +1,24 @@
+.util-header{
+  overflow: hidden;
+  width: 100%;
+  height: $utility-height;
+  background: darken($color-primary, 5%);
+  line-height: $utility-height;
+
+  &__nav{
+    list-style: none;
+    padding: 0 $gutter-width/4;
+    margin: 0;
+    float: right;
+  }
+
+  &__link{
+    text-decoration: none;
+    color: $color-white;
+    padding: 0 $gutter-width/4;
+  }
+
+  &__item{
+    display: inline-block;
+  }
+}
