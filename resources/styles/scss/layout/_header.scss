@@ -10,14 +10,14 @@
 	float: left;
 	padding: 0 $gutter-width;
 	box-sizing: border-box;
-	height: $header-height;
+	height: $nav-height;
 }
 
 	.logo__link{
 		display: inline-block;
 		text-decoration: none;
 		text-transform: uppercase;
-		height: $header-height;
+		height: $nav-height;
 		opacity: 1;
 		transition: all $transition-length;
 	}
