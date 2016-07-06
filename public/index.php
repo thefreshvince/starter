@@ -15,5 +15,7 @@
     </p>
   </div>
 
+  <script src="/assets/js/all.js" charset="utf-8"></script>
+
 </body>
 </html>
