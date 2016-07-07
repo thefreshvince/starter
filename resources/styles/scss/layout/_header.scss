@@ -3,6 +3,15 @@
 	width: 100%;
 	height: $header-height;
 	background: $color-primary;
+	z-index: 100;
+
+	.sticky{
+		background: $color-primary;
+
+		&-top{
+    	top: $utility-height;
+		}
+	}
 }
 
 .logo{

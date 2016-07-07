@@ -4,7 +4,6 @@ html,body{
 }
 
 body {
-	background: #fff;
 	@include font(0);
 	font-size: $font-size;
 	color: #333;
@@ -13,6 +12,7 @@ body {
 }
 
 .wrapper{
+	background: $color-white;
 	min-height: 100%;
 
 	&:after{

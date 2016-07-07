@@ -12,32 +12,49 @@
 
 ?>
 
-<nav class="main-nav flr">
-  <a href="#side-tap" class="side-tap show-on-mobile"></a>
-  <ul class="main-nav__list side-tap__nav flr">
-    <?php
+<div class="sticky block--100 block--no-pad" data-ignoreend="true" data-offsetstart="30">
 
-      // Loop through the navigation elements
-      foreach ($NAVIGATION as $link_title => $link_value) {
+  <a href="/" class="logo__link fll">
+    <svg class="logo" viewbox="0 0 340 60">
+      <text fill="#ffffff"
+            font-size="35"
+            font-family="Cutive Mono"
+            alignment-baseline="middle"
+            x="0"
+            y="32">
+        Cut Your Veggies
+      </text>
+    </svg>
+  </a>
 
-        $link_url = is_string($link_value) ? $link_value : $link_value['link'] ;
+  <nav class="main-nav flr">
+    <a href="#side-tap" class="side-tap show-on-mobile"></a>
+    <ul class="main-nav__list side-tap__nav flr">
+      <?php
 
-        echo '<li class="main-nav__list-item"><a href="' , $link_url , '" class="main-nav__link">' , $link_title , '</a>';
+        // Loop through the navigation elements
+        foreach ($NAVIGATION as $link_title => $link_value) {
 
-          // If subnav exists, loop through the items
-          if(is_array($link_value)) {
-            echo '<ul class="main-nav__list main-nav__sub">';
-              foreach ($link_value as $subnav_link_title => $subnav_link_value) {
-                if($subnav_link_title == 'link') continue;
-                echo '<li><a href="' , $subnav_link_value , '" class="main-nav__link main-nav__sub-link">' , $subnav_link_title , '</a></li>';
-              }
-            echo '</ul>';
-          }
+          $link_url = is_string($link_value) ? $link_value : $link_value['link'] ;
 
-        echo '</li>';
+          echo '<li class="main-nav__list-item"><a href="' , $link_url , '" class="main-nav__link">' , $link_title , '</a>';
 
-      }
+            // If subnav exists, loop through the items
+            if(is_array($link_value)) {
+              echo '<ul class="main-nav__list main-nav__sub">';
+                foreach ($link_value as $subnav_link_title => $subnav_link_value) {
+                  if($subnav_link_title == 'link') continue;
+                  echo '<li><a href="' , $subnav_link_value , '" class="main-nav__link main-nav__sub-link">' , $subnav_link_title , '</a></li>';
+                }
+              echo '</ul>';
+            }
 
-    ?>
-  </ul>
-</nav>
+          echo '</li>';
+
+        }
+
+      ?>
+    </ul>
+  </nav>
+
+</div>
