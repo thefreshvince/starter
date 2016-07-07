@@ -12,22 +12,15 @@
 
 ?>
 
-<nav class="main-nav">
+<nav class="main-nav flr">
   <a href="#side-tap" class="side-tap show-on-mobile"></a>
-  <ul class="main-nav__list side-tap__nav">
+  <ul class="main-nav__list side-tap__nav flr">
     <?php
 
       // Loop through the navigation elements
       foreach ($NAVIGATION as $link_title => $link_value) {
 
-        $link_url = '';
-
-        // Determine if the link has sub navigation
-        if(is_string($link_value)) {
-          $link_url = $link_value;
-        } else {
-          $link_url = $link_value['link'];
-        }
+        $link_url = is_string($link_value) ? $link_value : $link_value['link'] ;
 
         echo '<li class="main-nav__list-item"><a href="' , $link_url , '" class="main-nav__link">' , $link_title , '</a>';
 

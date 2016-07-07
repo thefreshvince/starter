@@ -13,7 +13,7 @@
 
   <?php include "parts/components/util-header.php"; ?>
 
-  <a href="/" class="logo__link">
+  <a href="/" class="logo__link fll">
     <svg class="logo" viewbox="0 0 340 60">
       <text fill="#ffffff"
             font-size="35"

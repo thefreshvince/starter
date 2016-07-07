@@ -15,9 +15,11 @@
 
 <div class="util-header">
 
-  <?php include 'parts/components/social-nav.php'; ?>
+  <div class="flr">
+    <?php include 'parts/components/social-nav.php'; ?>
+  </div>
 
-  <ul class="util-header__nav">
+  <ul class="util-header__nav flr">
     <?php
       foreach ($UTILITYNAVIGATION as $link_title => $link_value) {
         echo '<li class="util-header__item">',

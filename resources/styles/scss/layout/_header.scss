@@ -7,17 +7,16 @@
 
 .logo{
 	position: relative;
-	float: left;
 	padding: 0 $gutter-width;
 	box-sizing: border-box;
 	height: $nav-height;
 }
 
-	.logo__link{
-		display: inline-block;
-		text-decoration: none;
-		text-transform: uppercase;
-		height: $nav-height;
-		opacity: 1;
-		transition: all $transition-length;
-	}
+.logo__link{
+	display: inline-block;
+	text-decoration: none;
+	text-transform: uppercase;
+	height: $nav-height;
+	opacity: 1;
+	transition: all $transition-length;
+}

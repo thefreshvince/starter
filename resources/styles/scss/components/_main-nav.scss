@@ -1,5 +1,4 @@
 .main-nav{
-  float: right;
   height: $nav-height;
   text-transform: uppercase;
   font-size: 1.2em;
@@ -9,7 +8,6 @@
   margin: 0;
   padding: 0 $gutter-width/2;
   list-style: none;
-  float: right;
 }
 
 .main-nav__list-item{

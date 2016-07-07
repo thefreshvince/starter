@@ -9,7 +9,6 @@
     list-style: none;
     padding: 0 $gutter-width/4;
     margin: 0;
-    float: right;
   }
 
   &__link{
@@ -20,5 +19,9 @@
 
   &__item{
     display: inline-block;
+  }
+
+  .social-nav{
+    border-left: 1px solid $color-primary;
   }
 }
