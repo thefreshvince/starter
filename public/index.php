@@ -8,12 +8,18 @@
 </head>
 <body>
 
-  <?php include('parts/components/header.php'); ?>
+  <div class="wrapper">
 
-  <div class="container">
-    <p>
-      Web development is a lot like cooking... well sorta, I mean you shouldn't go kniving your monitor. Cut your veggies was born out of my personal want to quickly develop deployable non weighted front-end files.
-    </p>
+    <?php include('parts/components/header.php'); ?>
+
+    <main class="main">
+      <div class="container">
+        <p>
+          Web development is a lot like cooking... well sorta, I mean you shouldn't go kniving your monitor. Cut your veggies was born out of my personal want to quickly develop deployable non weighted front-end files.
+        </p>
+      </div>
+    </main>
+
   </div>
 
   <?php include('parts/components/footer.php'); ?>
