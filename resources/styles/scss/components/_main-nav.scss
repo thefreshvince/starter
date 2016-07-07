@@ -17,34 +17,39 @@
   display: inline-block;
   perspective: 500;
 
-  &:hover .main-nav__sub{
-    display: block;
-    opacity: 1;
-    height: auto;
-    transform: translate(-50%,0%);
-    padding: $gutter-width/2 0;
+  @include break(mobile-land, 1) {
+    &:hover .main-nav__sub{
+      display: block;
+      opacity: 1;
+      height: auto;
+      transform: translate(-50%,0%);
+      padding: $gutter-width/2 0;
+    }
   }
 }
 
 .main-nav__sub{
-  height: 0px;
-  overflow: hidden;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  backface-visibility: hidden;
-  box-sizing: border-box;
-  opacity: 0;
-  transform: translate(-50%, 10%);
-  background: darken($color-primary, 10%);
-  transform-origin: top center;
-  transition: transform $transition-length ease-in-out, opacity $transition-length;
+  @include break(mobile-land, 1) {
+    height: 0px;
+    z-index: 100;
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    backface-visibility: hidden;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translate(-50%, 10%);
+    background: darken($color-primary, 10%);
+    transform-origin: top center;
+    transition: transform $transition-length ease-in-out, opacity $transition-length;
 
-  .main-nav__link{
-    height: auto;
-    white-space: nowrap;
-    line-height: inherit;
-    padding: $gutter-width/2 $gutter-width;
+    .main-nav__link{
+      height: auto;
+      white-space: nowrap;
+      line-height: inherit;
+      padding: $gutter-width/2 $gutter-width;
+    }
   }
 }
 
