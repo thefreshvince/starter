@@ -12,6 +12,8 @@
 
 ?>
 
+<?php include 'parts/components/util-footer.php'; ?>
+
 <footer class="footer">
 
   <ul class="footer__nav fll ul-reset">
