@@ -33,7 +33,6 @@ The following are the variables that manipulate the site as a whole.
 
 Variable | Default | Description
 --- | --- | ---
-__Colors__ | |
 $color-primary | #0A94A2 | The main color site color
 $color-secondary | #FB9F0F | The complimentary site color
 $color-tertiary | #D81E7E | The accenting site color
