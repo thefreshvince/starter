@@ -12,7 +12,7 @@
 
 ?>
 
-<div class="sticky block--100 block--no-pad" data-ignoreend="true" data-offsetstart="30">
+<div class="sticky block--100 block--no-pad" data-ignoreend="false" data-offsetstart="30">
 
   <a href="/" class="logo__link fll">
     <svg class="logo" viewbox="0 0 340 60">

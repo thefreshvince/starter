@@ -3,6 +3,13 @@
  *  Sticky Elements
  *  Sticks the element to the top of the screen relative to the parent and scoll.
  *
+ * 	Paramaters:
+ * 	data-ignoreend (bool) whether or not the the element should stick even after reaching its parent's end.
+ *  data-offsetstart (number) the start offset at which the element should start sticking
+ *
+ *  Usage:
+ *  <div class="sticky" data-offsetstart="0" data-ignoreend="false"></div>
+ *
  */
 
 (function(){
@@ -19,6 +26,7 @@
       };
 
   Sticky.prototype.scroll = function (e) {
+    
     var top = window.pageYOffset || document.documentElement.scrollTop,
         scroll_diff = top - this.prev_top;
 
@@ -59,19 +67,16 @@
   };
 
   Sticky.prototype.calculate = function () {
-
     this.win_height = window.innerHeight;
     this.body_Rect = this.body.getBoundingClientRect();
     this.par_rect = this.par.getBoundingClientRect();
     this.prev_top = 0;
-
     this.el_rect = this.el.getBoundingClientRect();
     this.el_top = 0;
     this.el_height = this.el.offsetHeight;
     this.el_scroll_diff = this.win_height - this.el_height;
     this.el_start = this.par_rect.top - this.body_Rect.top + this.offset_start;
     this.el_end = this.par_rect.bottom - this.body_Rect.top - this.el_rect.height;
-
   };
 
   Sticky.prototype.init = function () {
