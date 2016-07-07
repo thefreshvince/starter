@@ -18,7 +18,7 @@ Newsletter | public/parts/components/newsletter.php, resources/scripts/js/compon
 ##Helper Classes
 These helper classes are easy ways to manipulate elements without having to bloat your css.
 
-Class Names | Description
+ClassNames | Description
 --- | ---
 .v-center | Vetically centers content (flexbox alternative) within a container with with a height and width. (does not work in something with height or width of 0 and container needs to be positioned relative/absolute/fixed)
 .show-on-mobile | Hides the element on desktop resolutions
@@ -31,7 +31,7 @@ Class Names | Description
 ##Variables
 The following are the variables that manipulate the site as a whole.
 
-Variable | Default | Description
+VariableNames | Default | Description
 --- | --- | ---
 $color-primary | #0A94A2 | The main color site color
 $color-secondary | #FB9F0F | The complimentary site color
