@@ -8,7 +8,7 @@
    */
 
   // Grab the navigation data
-  // include_once "parts/data/utility_footer-navigation.php";
+  include_once "parts/data/utility_footer-navigation.php";
 
 ?>
 
