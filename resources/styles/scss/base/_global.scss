@@ -6,6 +6,7 @@ html,body{
 body {
 	background: #fff;
 	@include font(0);
+	font-size: $font-size;
 	color: #333;
 	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 	-webkit-text-size-adjust: 100%;

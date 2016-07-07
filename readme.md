@@ -38,7 +38,8 @@ $color-secondary | #FB9F0F | The complimentary site color
 $color-tertiary | #D81E7E | The accenting site color
 $color-black | #030001 | Off black
 $color-white | #fff | White
-__Fonts__ | |
+__Typography__ | |
+$font-size | 16px | The base, general font size.
 $fonts | 0: (font-family: Cutive Mono, font-style: normal, font-weight: normal) | A map of all fonts accessible via index
 __Media Queries__ | |
 $mq | desktop: 1200px, tablet-port: 959px, mobile-land: 767px, mobile-port: 479px | A map of all media queries used throughout the sass. Add/Edit new MQs here to allow propagation throughout.
