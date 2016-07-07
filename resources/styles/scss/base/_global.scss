@@ -1,9 +1,24 @@
-/* #Basic Styles
-================================================== */
-	body {
-		background: #fff;
-		@include font(0);
-		color: #333;
-		-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
-		-webkit-text-size-adjust: 100%;
+html,body{
+	height: 100%;
+}
+
+body {
+	background: #fff;
+	@include font(0);
+	color: #333;
+	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+	-webkit-text-size-adjust: 100%;
+}
+
+.wrapper{
+	min-height: 100%;
+	margin-bottom: -$footer-height;
+
+	&:after{
+		content: '';
+		display: block;
+		position: relative;
+		width: 100%;
+		height: $footer-height;
 	}
+}
