@@ -55,6 +55,12 @@
 					width: 1% * $size;
 				}
 			}
+
+			@include break(desktop,1) {
+				&-dt{
+					width: 1% * $size;
+				}
+			}
 		}
 	}
 
