@@ -18,7 +18,7 @@ Newsletter | public/parts/components/newsletter.php, resources/scripts/js/compon
 ##Helper Classes
 These helper classes are easy ways to manipulate elements without having to bloat your css.
 
-Class | Description
+Class Names | Description
 --- | ---
 .v-center | Vetically centers content (flexbox alternative) within a container with with a height and width. (does not work in something with height or width of 0 and container needs to be positioned relative/absolute/fixed)
 .show-on-mobile | Hides the element on desktop resolutions
