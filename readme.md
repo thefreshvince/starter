@@ -11,6 +11,9 @@ Main Navigation | public/parts/components/main-nav.php, public/parts/data/naviga
 Utility Header | public/parts/components/util-header.php, public/parts/data/utility-navigation.php, and resources/styles/scss/components/\_util-header.scss | The utility header contains all non essential links for the site but still things that may be important for return or decisive visitors.
 Social Navigation | public/parts/components/social-nav.php, public/parts/data/social-links.php, and resources/styles/scss/components/\_social-nav.scss | Displays the social links and icons via font-awesome.
 Sidetap | public/parts/components/main-nav.php (within), resources/scripts/js/components/\_sidetap.js, and resources/styles/scss/components/\_side-tap.scss | Allows for hamburger menu to be displayed at lower resolutions and is accompanied by a simple class toggling js script.
+Footer | public/parts/components/footer.php, public/parts/data/navigation.php, and resources/styles/scss/layout/\_footer.scss | The main footer of the site.
+Utility Footer | public/parts/components/util-footer.php, public/parts/data/utility_footer-navigation.php, and resources/styles/scss/layout/\_util-footer.scss | the utility footer may be considered a quick sitemap/contact for the site.
+Newsletter | public/parts/components/newsletter.php, resources/scripts/js/components/\_newsletter-submit.js, and resources/styles/scss/components/\_newsletter.scss | A mailchimp based newsletter signup form (AJAXED sin jQuery).
 
 ##Helper Classes
 
@@ -22,3 +25,6 @@ Class | Description
 .ul-reset | Resets the UL elements
 .flr | Floats to the right
 .fll | Floats to the left
+.clearfix | Clears elements relative to eachother
+
+##Variables
