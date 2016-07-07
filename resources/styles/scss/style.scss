@@ -34,6 +34,7 @@ Tags: custom
 	@import "base/fonts";
 	@import "base/formatting";
 	@import "base/global";
+	@import "base/forms";
 	// @import "base/user.formatting";
 	@import "base/layout";
 	@import "base/print";
@@ -63,7 +64,9 @@ Tags: custom
 */
 
 	@import "components/util-header";
+	@import "components/util-footer";
 	@import "components/social-nav";
 	@import "components/main-nav";
 	@import "components/side-tap";
+	@import "components/newsletter";
 	@import "components/sticky-elements";
