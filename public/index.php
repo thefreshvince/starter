@@ -16,6 +16,8 @@
     </p>
   </div>
 
+  <?php include('parts/components/footer.php'); ?>
+
   <script src="/assets/js/all.js" charset="utf-8"></script>
 
 </body>
