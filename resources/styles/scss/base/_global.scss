@@ -12,13 +12,14 @@ body {
 
 .wrapper{
 	min-height: 100%;
-	margin-bottom: -$footer-height;
-
-	&:after{
-		content: '';
-		display: block;
-		position: relative;
-		width: 100%;
-		height: $footer-height;
-	}
+	// uncomment if you want sticky footer
+	// margin-bottom: -$footer-height;
+	//
+	// &:after{
+	// 	content: '';
+	// 	display: block;
+	// 	position: relative;
+	// 	width: 100%;
+	// 	height: $footer-height;
+	// }
 }
