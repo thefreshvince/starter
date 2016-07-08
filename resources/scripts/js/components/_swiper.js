@@ -4,7 +4,9 @@
     speed: 400,
     spaceBetween: 0,
     nextButton: '.swiper-button-next',
-    prevButton: '.swiper-button-prev'
+    prevButton: '.swiper-button-prev',
+    pagination: '.swiper-pagination',
+    scrollbar: '.swiper-scrollbar'
   });
 
 })();
