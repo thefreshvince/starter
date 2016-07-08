@@ -26,30 +26,36 @@
       };
 
   Sticky.prototype.scroll = function (e) {
-    
+
     var top = window.pageYOffset || document.documentElement.scrollTop,
         scroll_diff = top - this.prev_top;
 
     this.prev_top = top;
 
     if(this.state !== 1 && top+this.el_top > this.el_start && (top < this.el_end || this.ignore_end)) {
-      this.el.classList.remove('sticky--top','sticky--bottom');
-      this.el.classList.add('sticky--middle');
-      this.el.style.top = '0px';
       this.el_top = 0;
       this.state = 1;
+      requestAnimationFrame(() => {
+        this.el.classList.remove('sticky--top','sticky--bottom');
+        this.el.classList.add('sticky--middle');
+        this.el.style.top = '0px';
+      });
     } else if(this.state !== 2 && top+this.el_top >= this.el_end && !this.ignore_end) {
-      this.el.classList.remove('sticky--top','sticky--middle');
-      this.el.classList.add('sticky--bottom');
-      this.el.style.top = 'auto';
       this.el_top = 0;
       this.state = 2;
+      requestAnimationFrame(() => {
+        this.el.classList.remove('sticky--top','sticky--middle');
+        this.el.classList.add('sticky--bottom');
+        this.el.style.top = 'auto';
+      });
     } else if(top+this.el_top <= this.el_start && this.state !== 0) {
-      this.el.classList.remove('sticky--middle','sticky--bottom');
-      this.el.classList.add('sticky--top');
-      this.el.style.top = this.offset_start + 'px';
       this.el_top = 0;
       this.state = 0;
+      requestAnimationFrame(() => {
+        this.el.classList.remove('sticky--middle','sticky--bottom');
+        this.el.classList.add('sticky--top');
+        this.el.style.top = this.offset_start + 'px';
+      });
     }
 
     if(this.state === 1 && this.el_scroll_diff < 0) {
@@ -61,7 +67,9 @@
       if(this.el_top < this.el_scroll_diff || this.el_top > 0){
         this.el_top = this.el_top > 0 ? 0 : this.el_scroll_diff;
       }
-      this.el.style.top = this.el_top + 'px';
+      requestAnimationFrame(() => {
+        this.el.style.top = this.el_top + 'px';
+      });
     }
 
   };
