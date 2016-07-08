@@ -75,6 +75,15 @@
 
 /**
  *
+ *  Inlines the LI elements. To be applied on the UL element.
+ *
+ */
+.li-inline li{
+	display: inline-block;
+}
+
+/**
+ *
  *  Floats: right and left
  *
  */
