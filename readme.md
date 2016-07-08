@@ -14,7 +14,8 @@ Sidetap | public/parts/components/main-nav.php (within), resources/scripts/js/co
 Footer | public/parts/components/footer.php, public/parts/data/navigation.php, and resources/styles/scss/layout/\_footer.scss | The main footer of the site.
 Utility Footer | public/parts/components/util-footer.php, public/parts/data/utility_footer-navigation.php, and resources/styles/scss/layout/\_util-footer.scss | the utility footer may be considered a quick sitemap/contact for the site.
 Newsletter | public/parts/components/newsletter.php, resources/scripts/js/components/\_newsletter-submit.js, and resources/styles/scss/components/\_newsletter.scss | A mailchimp based newsletter signup form (AJAXED sin jQuery).
-Sticky Elements | resources/scripts/js/components/\_sticky-elements.js, and resources/styles/scss/components/\_sticky-elements.scss | An element sticking engine that handles header stickiness and random element stickiness relative to their containers.
+Sticky Elements | resources/scripts/js/components/\_sticky-elements.js and resources/styles/scss/components/\_sticky-elements.scss | An element sticking engine that handles header stickiness and random element stickiness relative to their containers.
+Swipers | public/parts/components/swiper.php, resources/scripts/js/components/\_swiper.js, public/assets/js/vendor/swiper.min.js, public/assets/css/vendor/swiper.min.css, and resources/styles/scss/components/\_swiper.scss | Using the idangerous swiper which does not require the use of a third party library such as jQuery. The files are included in the html as seperate requests since the slider files should NOT be used on every page. See swiper docs for more info http://idangero.us/swiper/api.
 
 ##Helper Classes
 These helper classes are easy ways to manipulate elements without having to bloat your css.
