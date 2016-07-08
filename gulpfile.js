@@ -55,7 +55,7 @@ gulp.task('scss', function() {
     .pipe(sass())
     .pipe(autoprefixer())
     .pipe(cleanCSS())
-    .pipe(sourcemaps.write())
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(paths.cssDest))
     .pipe(notify('Processed SCSS'));
 
@@ -68,7 +68,7 @@ gulp.task('js', function() {
     .pipe(babel())
     .pipe(uglify())
     .pipe(concat('all.js'))
-    .pipe(sourcemaps.write())
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(paths.jsDest))
     .pipe(notify('Processed JS'));
 
@@ -80,7 +80,7 @@ gulp.task('js_vendors', function() {
     .pipe(sourcemaps.init())
     .pipe(babel())
     .pipe(uglify())
-    .pipe(sourcemaps.write())
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(paths.jsDest + 'vendor'))
     .pipe(notify('Processed JS Vendors'));
 
