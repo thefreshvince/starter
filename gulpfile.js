@@ -39,6 +39,15 @@ var Paths = function(src){
 
       this.jsDest = this.assets+'js/';
       this.cssDest = this.assets+'css/';
+
+      this.jsVendors = [
+        this.jsSrc + 'vendor/**/*.js',
+        this.node + 'swiper/dist/js/swiper.min.js'
+      ];
+
+      this.cssVendors = [
+        this.node + 'swiper/dist/css/swiper.min.css'
+      ];
     },
     paths = new Paths('./resources/');
 
@@ -76,18 +85,28 @@ gulp.task('js', function() {
 
 gulp.task('js_vendors', function() {
 
-  return gulp.src([paths.jsSrc + 'vendor/**/*.js'])
+  return gulp.src(paths.jsVendors)
     .pipe(sourcemaps.init())
     .pipe(babel())
     .pipe(uglify())
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(paths.jsDest + 'vendor'))
+    .pipe(gulp.dest(paths.jsDest + 'vendor/'))
     .pipe(notify('Processed JS Vendors'));
 
 });
 
+gulp.task('css_vendors', function() {
+
+  return gulp.src(paths.cssVendors)
+    .pipe(sourcemaps.init())
+    .pipe(cleanCSS())
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest(paths.cssDest + 'vendor/'))
+    .pipe(notify('Processed CSS Vendors'));
+
+});
+
 gulp.task('html', function() {});
-gulp.task('css', function() {});
 gulp.task('images', function() {});
 
 gulp.task('watchers', function(){
@@ -117,6 +136,7 @@ gulp.task('default', [
   'scss',
   'js',
   'js_vendors',
+  'css_vendors',
   'html',
   'css',
   'images',
