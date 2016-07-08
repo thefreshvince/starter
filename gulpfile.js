@@ -138,7 +138,6 @@ gulp.task('default', [
   'js_vendors',
   'css_vendors',
   'html',
-  'css',
   'images',
   'webserver',
   'watchers'
