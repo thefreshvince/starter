@@ -71,7 +71,11 @@ select{
 
 textarea{}
 
-a{} a:hover{}
+a{
+	color: $color-primary;
+
+	&:hover{}
+}
 
 blockquote{
 	p{}
