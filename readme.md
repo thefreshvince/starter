@@ -13,6 +13,7 @@ Social Navigation | public/parts/components/social-nav.php, public/parts/data/so
 Sidetap | public/parts/components/main-nav.php (within), resources/scripts/js/components/\_sidetap.js, and resources/styles/scss/components/\_side-tap.scss | Allows for hamburger menu to be displayed at lower resolutions and is accompanied by a simple class toggling js script.
 Footer | public/parts/components/footer.php, public/parts/data/navigation.php, and resources/styles/scss/layout/\_footer.scss | The main footer of the site.
 Utility Footer | public/parts/components/util-footer.php, public/parts/data/utility_footer-navigation.php, and resources/styles/scss/layout/\_util-footer.scss | the utility footer may be considered a quick sitemap/contact for the site.
+Card | public/parts/components/cards.php, public/parts/components/card.php, public/parts/data/cards.php, resources/styles/scss/components/\_card.scss | Card component for displaying articles or other content in card form.
 Newsletter | public/parts/components/newsletter.php, resources/scripts/js/components/\_newsletter-submit.js, and resources/styles/scss/components/\_newsletter.scss | A mailchimp based newsletter signup form (AJAXED sin jQuery).
 Sticky Elements | resources/scripts/js/components/\_sticky-elements.js and resources/styles/scss/components/\_sticky-elements.scss | An element sticking engine that handles header stickiness and random element stickiness relative to their containers.
 Swipers | public/parts/components/swiper.php, resources/scripts/js/components/\_swiper.js, public/assets/js/vendor/swiper.min.js, public/assets/css/vendor/swiper.min.css, and resources/styles/scss/components/\_swiper.scss | Using the idangerous swiper which does not require the use of a third party library such as jQuery. The files are included in the html as seperate requests since the slider files should NOT be used on every page. See swiper docs for more info http://idangero.us/swiper/api.
@@ -22,13 +23,14 @@ These helper classes are easy ways to manipulate elements without having to bloa
 
 ClassNames | Description
 --- | ---
-.v-center | Vetically centers content (flexbox alternative) within a container with with a height and width. (does not work in something with height or width of 0 and container needs to be positioned relative/absolute/fixed)
-.show-on-mobile | Hides the element on desktop resolutions
-.hide-on-mobile | Hides the element on mobile resolutions
-.ul-reset | Resets the UL elements
-.flr | Floats to the right
-.fll | Floats to the left
-.clearfix | Clears elements relative to eachother
+.v-center | Vetically centers content (flexbox alternative) within a container with with a height and width. (does not work in something with height or width of 0 and container needs to be positioned relative/absolute/fixed).
+.show-on-mobile | Hides the element on desktop resolutions.
+.hide-on-mobile | Hides the element on mobile resolutions.
+.ul-reset | Resets the UL elements.
+.li-inline | Inlines the LI elements. To be applied on the UL element.
+.flr | Floats to the right.
+.fll | Floats to the left.
+.clearfix | Clears elements relative to each other.
 
 ##Variables
 The following are the variables that manipulate the site as a whole.
