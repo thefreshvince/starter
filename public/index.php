@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php
+
+  include('functions.php');
+
+?><!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -22,6 +26,8 @@
         </p>
       </div>
     </main>
+
+    <?php include('parts/components/cards.php'); ?>
 
   </div>
 
