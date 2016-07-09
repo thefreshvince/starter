@@ -88,3 +88,13 @@ ul{
 ol{
 	li{}
 }
+
+code{
+	display: inline-block;
+	width: 100%;
+	overflow: scroll;
+	padding: $gutter-width;
+	box-sizing: border-box;
+	background: $color-tertiary;
+	color: $color-white;
+}
