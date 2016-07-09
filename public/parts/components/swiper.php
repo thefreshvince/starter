@@ -8,14 +8,16 @@
    *
    */
 
+  include_once "parts/data/swiper.php";
+
 ?>
 
-<div class="swiper-container">
+<div class="swiper-container block--100">
 
     <div class="swiper-wrapper">
       <?php
 
-        for ($i=0; $i < 5; $i++) {
+        foreach ($SWIPER as $slide_key => $slide) {
 
           ?>
 
@@ -24,7 +26,7 @@
 
                 <div class="v-center">
                   <div>
-                    <h1>Slide <?= $i ?></h1>
+                    <h1><?= $slide ?></h1>
                   </div>
                 </div>
 
