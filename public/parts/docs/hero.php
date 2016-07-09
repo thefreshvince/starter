@@ -1,3 +1,14 @@
+<?php
+
+  /*
+   *
+   *  Hero Example
+   *  A temporary example of a hero banner
+   *
+   */
+
+?>
+
 <style>
   .temp__veggies{
     background: url('http://msmecho.com/wp-content/uploads/2016/04/image.jpg');
