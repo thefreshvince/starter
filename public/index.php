@@ -13,23 +13,13 @@
 </head>
 <body>
 
-  <div class="wrapper">
+  <?php include('parts/components/header.php'); ?>
 
-    <?php include('parts/components/header.php'); ?>
+  <?php include('parts/docs/hero.php'); ?>
 
-    <?php include('parts/components/swiper.php'); ?>
+  <?php include('parts/components/swiper.php'); ?>
 
-    <main class="main">
-      <div class="container">
-        <p>
-          Web development is a lot like cooking... well sorta, I mean you shouldn't go kniving your monitor. Cut your veggies was born out of my personal want to quickly develop deployable non weighted front-end files.
-        </p>
-      </div>
-    </main>
-
-    <?php include('parts/components/cards.php'); ?>
-
-  </div>
+  <?php include('parts/components/cards.php'); ?>
 
   <?php include('parts/components/footer.php'); ?>
 
