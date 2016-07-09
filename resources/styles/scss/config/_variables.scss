@@ -1,5 +1,13 @@
 /*
 
+	Gutters
+
+*/
+
+$gutter-width: 20px;
+
+/*
+
 	Colors
 
 */
@@ -58,11 +66,15 @@ $layout: (
 
 /*
 
-	Gutters
+	Media Queries
 
 */
 
-$gutter-width: 20px;
+$ratios: (
+	100: 100%,
+	50: 50%,
+	widescreen: 56.25%
+);
 
 /*
 
