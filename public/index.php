@@ -21,6 +21,8 @@
 
   <?php include('parts/components/cards.php'); ?>
 
+  <?php include('parts/docs/forms.php'); ?>
+
   <?php include('parts/components/footer.php'); ?>
 
   <script src="/assets/js/vendor/swiper.min.js" charset="utf-8"></script>
