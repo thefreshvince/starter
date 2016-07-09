@@ -1,3 +1,14 @@
+<?php
+
+  /*
+   *
+   *  Newsletter
+   *  This is the markup for a mailchimp newsletter and using the newsletter js
+   *
+   */
+
+?>
+
 <p>This brief blurb should describe what they'll get from the newsletter.</p>
 <div class="newsletter">
   <form action="#Newsletter" method="post" class="newsletter__form">
