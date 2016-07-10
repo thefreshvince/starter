@@ -26,16 +26,15 @@
 
     <div class="card-body block--100">
       <?php if(!empty($card['date'])){ ?>
-        <time class="card--timestamp" datetime="<?= $card['date'] ?>">
+        <time class="card__time" datetime="<?= $card['date'] ?>">
           <?= date('F j, Y', strtotime($card['date'])) ?>
         </time>
       <?php } ?>
       <?php if(!empty($card['author'])){ ?>
-        <address>
-          <a class="card__author" href="#">
-            by <?= $card['author'] ?>
-          </a>
-        </address>
+        <br/>
+        <a class="card__author" href="#">
+          by <?= $card['author'] ?>
+        </a>
       <?php } ?>
       <?php if(!empty($card['excerpt'])){ ?>
         <p class="card__excerpt"><?= $card['excerpt'] ?></p>
