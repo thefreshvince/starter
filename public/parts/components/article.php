@@ -8,7 +8,7 @@
    */
 
   // Grab the navigation data
-  include_once "parts/data/article.php";
+  include_once "parts/data/articles.php";
 
   $article = $ARTICLES[0];
 
