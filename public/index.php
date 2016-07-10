@@ -19,7 +19,14 @@
 
   <?php include('parts/components/swiper.php'); ?>
 
-  <?php include('parts/components/cards.php'); ?>
+  <?php
+
+    $component_title = 'Cards';
+    include('parts/components/cards.php');
+
+  ?>
+
+  <?php include('parts/components/article.php'); ?>
 
   <?php include('parts/docs/forms.php'); ?>
 
