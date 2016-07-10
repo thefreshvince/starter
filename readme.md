@@ -14,6 +14,7 @@ Sidetap | public/parts/components/main-nav.php (within), resources/scripts/js/co
 Footer | public/parts/components/footer.php, public/parts/data/navigation.php, and resources/styles/scss/layout/\_footer.scss | The main footer of the site.
 Utility Footer | public/parts/components/util-footer.php, public/parts/data/utility_footer-navigation.php, and resources/styles/scss/layout/\_util-footer.scss | the utility footer may be considered a quick sitemap/contact for the site.
 Card | public/parts/components/cards.php, public/parts/components/card.php, public/parts/data/cards.php, resources/styles/scss/components/\_card.scss | Card component for displaying articles or other content in card form.
+Article | public/parts/components/article.php, public/parts/data/articles.php, and resources/styles/scss/components/\_article.scss | Aricle component for displaying full articles on a page. Most common usage is blog posts.
 Newsletter | public/parts/components/newsletter.php, resources/scripts/js/components/\_newsletter-submit.js, and resources/styles/scss/components/\_newsletter.scss | A mailchimp based newsletter signup form (AJAXED sin jQuery).
 Sticky Elements | resources/scripts/js/components/\_sticky-elements.js and resources/styles/scss/components/\_sticky-elements.scss | An element sticking engine that handles header stickiness and random element stickiness relative to their containers.
 Swipers | public/parts/components/swiper.php, resources/scripts/js/components/\_swiper.js, public/assets/js/vendor/swiper.min.js, public/assets/css/vendor/swiper.min.css, and resources/styles/scss/components/\_swiper.scss | Using the idangerous swiper which does not require the use of a third party library such as jQuery. The files are included in the html as seperate requests since the slider files should NOT be used on every page. See swiper docs for more info http://idangero.us/swiper/api.
@@ -47,6 +48,8 @@ $font-size | 16px | The base, general font size.
 $fonts | 0: (font-family: Cutive Mono, font-style: normal, font-weight: normal) | A map of all fonts accessible via index
 __Media Queries__ | |
 $mq | desktop: 1200px, tablet-port: 959px, mobile-land: 767px, mobile-port: 479px | A map of all media queries used throughout the sass. Add/Edit new MQs here to allow propagation throughout.
+__Aspect Ratios__ | |
+$ratios | 100: 100%, 50: 50%, 30: 30%, widescreen: 56.25% | Sets the allowable ratio classes for content that needs fixed ratio regardless of screen res.
 __Layout sizes__ | |
 $container-width | 1200px | The base container width.
 $layout | 100, 66.666666, 50, 33.333333, 25, 20 | The different layout sizes used via the '.block--x' classes.
