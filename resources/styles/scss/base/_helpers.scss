@@ -5,13 +5,20 @@
  *  of 0 and container needs to be positioned relative/absolute/fixed)
  *
  *  Usage:
- *  <div class="container">
- *		<div class="v-center">
- *			<div>
- *				Your content here
- *			</div>
+ *	
+ *	<div class="v-center">
+ *		<div>
+ *			Your content here
  *		</div>
  *	</div>
+ *
+ *  or
+ *
+ *  <div class="v-center--flex">
+ *  	<div>
+ *			Your content here
+ *		</div>
+ *  </div>
  *
  */
 .v-center{
@@ -36,29 +43,48 @@
 		vertical-align: middle;
 		max-width: 90%;
 	}
-}
 
-/**
- *
- *  Hides the element on desktop resolutions
- *
- */
-.show-on-mobile{
-	display: none;
-
-	@include break(mobile-land) {
-		display: inherit;
+	&--flex{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
 	}
 }
 
 /**
  *
- *  Hides the element on mobile resolutions
+ *  Hides the elements based on resolution
  *
  */
-.hide-on-mobile{
-	@include break(mobile-land) {
-		display: none;
+.hide-on{
+	&--{
+		@each $resolution, $size in $mq {
+			&#{$resolution} {
+				@include break($resolution) {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+/**
+ *
+ *  Shows the elements based on resolution
+ *
+ */
+.show-on{
+	&--{
+		@each $resolution, $size in $mq {
+			&#{$resolution} {
+				display: none;
+
+				@include break($resolution) {
+					display: inherit;
+				}
+			}
+		}
 	}
 }
 
@@ -67,19 +93,20 @@
  *  Resets the UL elements
  *
  */
-.ul-reset{
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
+.ul{
+	&--{
+		&reset{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
 
-/**
- *
- *  Inlines the LI elements. To be applied on the UL element.
- *
- */
-.li-inline li{
-	display: inline-block;
+		&inline{
+			li{
+				display: inline-block;
+			}
+		}
+	}
 }
 
 /**
@@ -87,27 +114,19 @@
  *  Floats: right and left
  *
  */
-.flr{
-	float: right;
-}
+.fl{
 
-.fll{
-	float: left;
-}
+	&r{
+		float: right;
+	}
 
-/**
- *
- *  Clearfixes elements to fix ghost margins and overflows
- *
- */
-.clearfix{
-	&:after {
-    content: "\0020";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
-  }
+	&l{
+		float: left;
+	}
+
+	&n{
+		float: none;
+	}
 }
 
 /**
@@ -145,4 +164,68 @@
 			}
 		}
 	}
+}
+
+/**
+ *
+ *  Padding & Margin helpers
+ *	Loops through margins map to create helpers like:
+ *	.padding--small and .margin--small
+ * 
+ */
+@each $property in (padding,margin) {
+
+	.#{$property}{
+		#{$property}: $gutter;
+
+		&--{
+			
+			@each $gutter, $size in $gutters {
+				&#{$gutter} {
+					#{$property}: $size;
+				}
+			}
+
+			@each $direction in (top,right,bottom,left) {
+				&#{$direction} {
+					#{$property}-#{$direction}: $gutter;
+				}
+			}
+
+			&none{
+				#{$property}: 0;
+			}
+		}
+	}
+}
+
+/**
+ *
+ *  Colors
+ *  Loops through color map to create helpers like .color--primary
+ *
+ */
+.color{
+	&--{
+		@each $color, $hex in $colors {
+			&#{$color} {
+				color: $hex;
+			}
+		}
+	}
+}
+
+/**
+ *
+ *  Clearfixes elements to fix ghost margins and overflows
+ *
+ */
+.clearfix{
+	&:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
 }

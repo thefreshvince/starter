@@ -1,12 +1,12 @@
 html,body{
-	background: $color-tertiary;
+	background: $color-secondary;
 	height: 100%;
 }
 
 body {
 	@include font(0);
 	font-size: $font-size;
-	color: #333;
+	color: $font-color;
 	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 	-webkit-text-size-adjust: 100%;
 }
@@ -14,6 +14,7 @@ body {
 .wrapper{
 	background: $color-white;
 	min-height: 100%;
+	margin-bottom: -$footer-height;
 
 	&:after{
 		content: '';
@@ -21,6 +22,6 @@ body {
 		position: relative;
 		width: 100%;
 		clear: both
-		//height: $footer-height;
+		height: $footer-height;
 	}
 }

@@ -2,18 +2,22 @@
 	@extend .clearfix;
 	overflow: auto;
 	box-sizing: border-box;
-  position: relative;
-  max-width: $container-width;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 $gutter-width/2;
+	position: relative;
+	max-width: $container-large;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 $gutter-width/2;
 
-	&--text{
-		max-width: 700px;
+	&--{
+		@each $container, $container-width in $containers {
+			&#{$container} {
+				max-width: $container-width;
+			}
+		}
 	}
 }
 
-.block{
+%block{
 	box-sizing: border-box;
 	padding: $gutter-width/2;
 	display: block;
@@ -21,63 +25,30 @@
 	float: left;
 }
 
-	@each $size in $layout {
-		$size_class: '';
+@each $query_name, $query_size in $mq {
+	@include break($query_name,1) {
+		@each $size in $layout {
+			$size_class: '';
+			$query_type: '';
 
-		@if $size > 66 and $size < 67 {
-			$size_class: 'two-third';
-		} @else if $size > 33 and $size < 34 {
-			$size_class: 'one-third';
-		} @else {
-			$size_class: $size;
-		}
-
-		.block--#{$size_class} {
-			@extend .block;
-			width: 1% * $size;
-
-			@include break(mobile-port,1) {
-				&-mp{
-					width: 1% * $size;
-				}
+			@if $size > 66 and $size < 67 {
+				$size_class: 'two-third';
+			} @else if $size > 33 and $size < 34 {
+				$size_class: 'one-third';
+			} @else {
+				$size_class: $size;
 			}
 
-			@include break(mobile-land,1) {
-				&-ml{
-					width: 1% * $size;
-				}
+			@if $query_name == '' {
+				$query_type = '';
+			} @else {
+				$query_type = '--' + $query_name;
 			}
 
-			@include break(tablet-port,1) {
-				&-tp{
-					width: 1% * $size;
-				}
-			}
-
-			@include break(desktop,1) {
-				&-dt{
-					width: 1% * $size;
-				}
+			.block__#{$size_class + $query_type} {
+				@extend %block;
+				width: 1% * $size;
 			}
 		}
 	}
-
-	.block--no-pad{
-		padding: 0;
-	}
-
-	.block--no-pad-right{
-		padding-right: 0px;
-	}
-
-	.block--no-pad-left{
-		padding-left: 0px;
-	}
-
-	.block--no-pad-top{
-		padding-top: 0px;
-	}
-
-	.block--no-pad-bottom{
-		padding-bottom: 0px;
-	}
+}
