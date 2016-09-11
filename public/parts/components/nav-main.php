@@ -18,11 +18,11 @@
     <svg class="logo" viewbox="0 0 340 60">
       <text fill="#ffffff"
             font-size="35"
-            font-family="Cutive Mono"
+            font-family="Helvetica Neue"
             alignment-baseline="middle"
             x="0"
             y="32">
-        Cut Your Veggies
+        Starter
       </text>
     </svg>
   </a>

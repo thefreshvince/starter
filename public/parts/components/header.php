@@ -11,8 +11,6 @@
 
 <header class="header">
 
-  <?php include "parts/components/util-header.php"; ?>
-
-  <?php include "parts/components/main-nav.php"; ?>
+  <?php include "parts/components/nav-main.php"; ?>
 
 </header>

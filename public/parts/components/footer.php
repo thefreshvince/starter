@@ -12,8 +12,6 @@
 
 ?>
 
-<?php include 'parts/components/util-footer.php'; ?>
-
 <footer class="footer">
 
   <ul class="footer__nav fll ul-reset">
@@ -33,7 +31,7 @@
   </ul>
 
   <div class="flr">
-    <?php include 'parts/components/social-nav.php'; ?>
+    <?php include 'parts/components/nav-social.php'; ?>
   </div>
 
 </footer>
