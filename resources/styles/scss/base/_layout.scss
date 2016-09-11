@@ -6,7 +6,7 @@
 	max-width: $container-large;
 	width: 100%;
 	margin: 0 auto;
-	padding: 0 $gutter-width/2;
+	padding: 0 $gutter-small;
 
 	&--{
 		@each $container, $container-width in $containers {
@@ -17,16 +17,16 @@
 	}
 }
 
-%block{
-	box-sizing: border-box;
-	padding: $gutter-width/2;
-	display: block;
-	position: relative;
-	float: left;
-}
-
 @each $query_name, $query_size in $mq {
 	@include break($query_name,1) {
+		%block{
+			box-sizing: border-box;
+			padding: $gutter-small;
+			display: block;
+			position: relative;
+			float: left;
+		}
+
 		@each $size in $layout {
 			$size_class: '';
 			$query_type: '';
@@ -40,9 +40,9 @@
 			}
 
 			@if $query_name == '' {
-				$query_type = '';
+				$query_type: '';
 			} @else {
-				$query_type = '--' + $query_name;
+				$query_type: '--' + $query_name;
 			}
 
 			.block__#{$size_class + $query_type} {

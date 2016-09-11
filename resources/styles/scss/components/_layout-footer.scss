@@ -4,7 +4,7 @@
   min-height: $footer-height;
   line-height: $footer-height;
   background: $color-secondary;
-  padding: 0px $gutter-width/2;
+  padding: 0px $gutter-small;
   color: darken($color-secondary, 20%);
 
   .social-nav__link{
@@ -21,7 +21,7 @@
 }
 
 .footer-nav__link{
-  padding: 0 $gutter-width/2;
+  padding: 0 $gutter-small;
   text-decoration: none;
   color: darken($color-secondary, 20%);
 

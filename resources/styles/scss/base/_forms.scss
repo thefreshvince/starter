@@ -6,11 +6,11 @@ textarea
 {
 	margin:0;
 	border:0;
-	padding: $gutter-width/2;
+	padding: $gutter-small;
 	display:inline-block;
 	vertical-align:middle;
 	white-space:normal;
-  color: $color-white;
+	color: $color-white;
 	background: darken($color-primary, 20%);
 
 	/* Browsers have different default form fonts */

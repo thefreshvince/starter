@@ -9,14 +9,14 @@
 		background: $color-primary;
 
 		&-top{
-    	top: $utility-height;
+    		top: 0;
 		}
 	}
 }
 
 .logo{
 	position: relative;
-	padding: 0 $gutter-width;
+	padding: 0 $gutter;
 	box-sizing: border-box;
 	height: $nav-height;
 }
@@ -27,5 +27,5 @@
 	text-transform: uppercase;
 	height: $nav-height;
 	opacity: 1;
-	transition: all $transition-length;
+	transition: $transition-default;
 }

@@ -13,10 +13,10 @@ $gutter-huge:			$gutter * 4;
 // For ease of looping. Add to map if you
 // want gutter accessable via helpers
 $gutters: (
-	'': 				$gutter
-	tiny: 				$gutter-tiny
-	small: 				$gutter-small
-	large: 				$gutter-large
+	'': 				$gutter,
+	tiny: 				$gutter-tiny,
+	small: 				$gutter-small,
+	large: 				$gutter-large,
 	huge: 				$gutter-huge
 );
 
@@ -95,7 +95,7 @@ $transition-default:	all $transition-length $transition-timing;
 
 $font-size: 			16px;
 $font-line-height:		1.2em;
-$font-color:			$color-font;
+$font-color:			$color-text;
 $fonts: (
 	body: (
 		font-family:  	#{"Helvetica Neue, Helvetica, Arial, sans-serif"},

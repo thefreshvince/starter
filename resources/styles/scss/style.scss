@@ -54,10 +54,10 @@ Tags: custom
 
 */
 
-	@import "js-sidetap.scss";
-	@import "js-sticky-elements";
-	@import "layout-footer";
-	@import "layout-header";
-	@import "nav-main";
-	@import "nav-social";
-	@import "section-newsletter";
+	@import "components/js-sidetap";
+	@import "components/js-sticky-elements";
+	@import "components/layout-footer";
+	@import "components/layout-header";
+	@import "components/nav-main";
+	@import "components/nav-social";
+	@import "components/section-newsletter";
