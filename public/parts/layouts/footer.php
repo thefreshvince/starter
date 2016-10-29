@@ -31,7 +31,7 @@
   </ul>
 
   <div class="flr">
-    <?php include 'parts/components/nav-social.php'; ?>
+    <?php include 'parts/navs/social.php'; ?>
   </div>
 
 </footer>
