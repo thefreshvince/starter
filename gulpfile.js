@@ -5,6 +5,8 @@
  */
 
 var gulp = require('gulp'),
+    plumber = require('gulp-plumber'),
+    ftp = require('gulp-ftp'),
     uglify = require('gulp-uglify'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
@@ -13,43 +15,30 @@ var gulp = require('gulp'),
     babel = require('gulp-babel'),
     notify = require('gulp-notify'),
     concat = require('gulp-concat'),
-    connect = require('gulp-connect-php'),
-    browserSync = require('browser-sync').create();
+    ftp_settings = require('./resources/scripts/settings/ftp.js')
+    paths  = require('./resources/scripts/settings/paths.js');
 
 /*
  *
- *  Paths Config
+ *  FUNCTIONS
  *
  */
 
-var Paths = function(src){
-      this.src = src;
-      this.dest = './public/';
-      this.assets = this.dest+'assets/';
-      this.node = './node_modules/';
-
-      this.scriptsSrc = this.src+'scripts/';
-      this.markupSrc = this.src+'markup/';
-      this.stylesSrc = this.src+'styles/';
-
-      this.jsSrc = this.scriptsSrc+'js/';
-      this.cssSrc = this.stylesSrc+'css/';
-      this.scssSrc = this.stylesSrc+'scss/';
-      this.htmlSrc = this.markupSrc+'html/';
-
-      this.jsDest = this.assets+'js/';
-      this.cssDest = this.assets+'css/';
-
-      this.jsVendors = [
-        this.jsSrc + 'vendor/**/*.js',
-        this.node + 'swiper/dist/js/swiper.min.js'
-      ];
-
-      this.cssVendors = [
-        this.node + 'swiper/dist/css/swiper.min.css'
-      ];
-    },
-    paths = new Paths('./resources/');
+function uploadToFtp(event) {
+  var ftp_path = ftp_settings.remotePath,
+      temp_path = event.path.split('/public')[1].split('/');
+  temp_path.pop();
+  ftp_path += temp_path.join('/')+'/';
+  console.log(event);
+  gulp.src(event.path)
+    .pipe(ftp({
+      host: ftp_settings.host,
+      user: ftp_settings.user,
+      pass: ftp_settings.pass,
+      remotePath: ftp_path
+    }))
+    .pipe(notify('Uploaded file'));
+}
 
 /*
  *
@@ -60,11 +49,12 @@ var Paths = function(src){
 gulp.task('scss', function() {
 
   return gulp.src([paths.scssSrc + '**/*.scss'])
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
+    .pipe(plumber())
     .pipe(sass())
     .pipe(autoprefixer())
     .pipe(cleanCSS())
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(paths.cssDest))
     .pipe(notify('Processed SCSS'));
 
@@ -73,11 +63,12 @@ gulp.task('scss', function() {
 gulp.task('js', function() {
 
   return gulp.src([paths.jsSrc + '**/*.js', '!vendor/*.js'])
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
+    .pipe(plumber())
     .pipe(babel())
     .pipe(uglify())
     .pipe(concat('all.js'))
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(paths.jsDest))
     .pipe(notify('Processed JS'));
 
@@ -86,10 +77,10 @@ gulp.task('js', function() {
 gulp.task('js_vendors', function() {
 
   return gulp.src(paths.jsVendors)
-    .pipe(sourcemaps.init())
-    .pipe(babel())
+    //.pipe(sourcemaps.init())
+    // .pipe(babel())
     .pipe(uglify())
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(paths.jsDest + 'vendor/'))
     .pipe(notify('Processed JS Vendors'));
 
@@ -98,9 +89,9 @@ gulp.task('js_vendors', function() {
 gulp.task('css_vendors', function() {
 
   return gulp.src(paths.cssVendors)
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(cleanCSS())
-    .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(paths.cssDest + 'vendor/'))
     .pipe(notify('Processed CSS Vendors'));
 
@@ -108,6 +99,13 @@ gulp.task('css_vendors', function() {
 
 gulp.task('html', function() {});
 gulp.task('images', function() {});
+
+gulp.task('ftp', function() {
+  return gulp.src('./public/**/*')
+    .pipe(plumber())
+    .pipe(ftp(ftp_settings))
+    .pipe(notify('Uploaded file'));
+});
 
 gulp.task('watchers', function(){
   gulp.watch(paths.scssSrc + '**/*.scss', ['scss']);
@@ -119,17 +117,9 @@ gulp.task('watchers', function(){
   ]).on('change', function () {
     browserSync.reload();
   });
-});
-
-gulp.task('webserver', function() {
-  connect.server({
-    base: paths.dest
-  }, function (){
-    browserSync.init({
-      baseDir: paths.dest,
-      proxy: '127.0.0.1:8000'
-    });
-  });
+  gulp.watch(['./public/**/*'])
+    .on('add', uploadToFtp)
+    .on('change', uploadToFtp);
 });
 
 gulp.task('default', [
@@ -139,6 +129,5 @@ gulp.task('default', [
   'css_vendors',
   'html',
   'images',
-  'webserver',
   'watchers'
 ]);

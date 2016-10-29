@@ -5,51 +5,18 @@
  *  of 0 and container needs to be positioned relative/absolute/fixed)
  *
  *  Usage:
- *	
- *	<div class="v-center">
- *		<div>
- *			Your content here
- *		</div>
- *	</div>
- *
- *  or
- *
- *  <div class="v-center--flex">
+ *  <div class="centerer">
  *  	<div>
  *			Your content here
  *		</div>
  *  </div>
  *
  */
-.v-center{
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	display: block;
-	text-align: center;
-	top: 0;
-	left: 0;
-
-	&:before {
-		content: '';
-		display: inline-block;
-		height: 100%;
-		vertical-align: middle;
-		margin-right: -0.25em;
-	}
-
-	>*{
-		display: inline-block;
-		vertical-align: middle;
-		max-width: 90%;
-	}
-
-	&--flex{
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		align-items: center;
-	}
+.centerer{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
 }
 
 /**
@@ -171,32 +138,42 @@
  *  Padding & Margin helpers
  *	Loops through margins map to create helpers like:
  *	.padding--small and .margin--small
- * 
+ *
  */
 @each $property in (padding,margin) {
 
-	.#{$property}{
-		#{$property}: $gutter;
+ 	.#{$property}{
+ 		#{$property}: $gutter;
 
-		&--{
-			
-			@each $gutter, $size in $gutters {
-				&#{$gutter} {
-					#{$property}: $size;
-				}
-			}
+ 		&--{
 
-			@each $direction in (top,right,bottom,left) {
-				&#{$direction} {
-					#{$property}-#{$direction}: $gutter;
-				}
-			}
+ 			@each $direction in (top,right,bottom,left) {
+ 				&#{$direction} {
+ 					#{$property}-#{$direction}: $gutter;
 
-			&none{
-				#{$property}: 0;
-			}
-		}
-	}
+ 					@each $gutter, $size in $gutters {
+ 						&-#{$gutter} {
+ 							#{$property}-#{$direction}: $size;
+ 						}
+ 					}
+
+ 					&-none{
+ 						#{$property}-#{$direction}: 0 !important;
+ 					}
+ 				}
+ 			}
+
+ 			@each $gutter, $size in $gutters {
+ 				&#{$gutter} {
+ 					#{$property}: $size;
+ 				}
+ 			}
+
+ 			&none{
+ 				#{$property}: 0 !important;
+ 			}
+ 		}
+ 	}
 }
 
 /**
@@ -211,6 +188,43 @@
 			&#{$color} {
 				color: $hex;
 			}
+		}
+	}
+}
+
+/**
+ *
+ *	Backgrounds
+ *  Loops through color map to create helpers like .color--primary
+ *
+ */
+.background{
+	&--{
+		@each $color, $hex in $colors {
+			&#{$color} {
+				background-color: $hex;
+			}
+		}
+	}
+}
+
+/**
+ *
+ *  Text modifiers
+ *
+ */
+.text{
+	&--{
+		&bold{
+			font-weight: 800;
+		}
+
+		&center{
+			text-align: center;
+		}
+
+		&right{
+			text-align: right;
 		}
 	}
 }

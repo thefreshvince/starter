@@ -46,8 +46,8 @@ Tags: custom
 
 */
 
-	@import "components/layout-header";
-	@import "components/layout-footer";
+	@import "layouts/header";
+	@import "layouts/footer";
 
 /*
 
@@ -55,11 +55,9 @@ Tags: custom
 
 */
 
-	@import "components/js-sidetap";
-	@import "components/js-sticky-elements";
-	@import "components/layout-footer";
-	@import "components/layout-header";
-	@import "components/nav-main";
-	@import "components/nav-social";
-	@import "components/section-newsletter";
+	@import "components/sidetap";
+	@import "components/sticky-elements";
+	@import "navs/main";
+	@import "navs/social";
+	@import "sections/newsletter";
 

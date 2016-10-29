@@ -14,11 +14,9 @@
 </head>
 <body>
 
-  <?php include('parts/components/header.php'); ?>
+  <?php include('parts/layouts/header.php'); ?>
 
-  <?php include('parts/components/swiper.php'); ?>
-
-  <?php include('parts/components/footer.php'); ?>
+  <?php include('parts/layouts/footer.php'); ?>
 
   <script src="/assets/js/vendor/swiper.min.js" charset="utf-8"></script>
   <script src="/assets/js/all.js" charset="utf-8"></script>
