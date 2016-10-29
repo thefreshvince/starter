@@ -1,24 +1,26 @@
 {
-	"file_types": [
+	"ingredients": [
 		{
 			"type": "html",
-			"output_type": "php",
-			"name": "markup",
-			"path": "/public/parts/components",
-			"prefix": ""
+			"output_type": "html",
+			"components_as_dirs": true,
+			"path": "/public/parts/"
 		},
 		{
 			"type": "scss",
-			"name": "styles",
-			"path": "/resources/styles/scss/components",
-			"prefix": "_"
+			"components_as_dirs": true,
+			"path": "/resources/styles/scss/",
+			"prefix": "_",
+			"import": {
+				"name": "style.scss",
+				"path": "/resources/styles/scss/"
+			}
 		},
 		{
 			"type": "js",
-			"name": "scripts",
-			"path": "/resources/scripts/js/components",
+			"components_as_dirs": true,
+			"path": "/resources/scripts/js/",
 			"prefix": "_"
 		}
-	],
-	"scss_file": "style.scss"
+	]
 }
