@@ -11,53 +11,52 @@ Tags: custom
 
 /*
 
-	Config
+  Config
 
 */
 
-	@import "config/variables";
-	@import "config/mixins";
+  @import "config/variables";
+  @import "config/mixins";
 
 /*
 
-	Vendor
+  Vendor
 
 */
 
-	@import "../../../node_modules/normalize.css/normalize.css";
+  @import "../../../node_modules/normalize.css/normalize.css";
 
 /*
 
-	Base
+  Base
 
 */
 
-	@import "base/fonts";
-	@import "base/formatting";
-	@import "base/global";
-	@import "base/forms";
-	@import "base/layout";
-	@import "base/print";
-	@import "base/helpers";
+  @import "base/fonts";
+  @import "base/formatting";
+  @import "base/global";
+  @import "base/forms";
+  @import "base/layout";
+  @import "base/print";
+  @import "base/helpers";
 
 /*
 
-	Layout
+  Layout
 
 */
 
-	@import "layouts/header";
-	@import "layouts/footer";
+  @import "layouts/header";
+  @import "layouts/footer";
 
 /*
 
-	Components
+  Components
 
 */
 
-	@import "components/sidetap";
-	@import "components/sticky-elements";
-	@import "navs/main";
-	@import "navs/social";
-	@import "sections/newsletter";
-
+  @import "components/sidetap";
+  @import "components/sticky-elements";
+  @import "navs/main";
+  @import "navs/social";
+  @import "sections/newsletter";
