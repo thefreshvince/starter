@@ -1,11 +1,12 @@
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const path = require("path");
-var extractSCSS = new ExtractTextPlugin('./public/assets/css/style.css');
+var extractSCSS = new ExtractTextPlugin('../css/style.css');
 
 module.exports = {
   entry: './resources/scripts/js/main.js',
   output: {
-    filename: './public/assets/js/bundle.js'
+    filename: 'bundle.js',
+    path: './public/assets/js/'
   },
   module: {
     loaders: [

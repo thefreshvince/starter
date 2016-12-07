@@ -1,3 +1,5 @@
 node_modules
 .DS_Store
 ingredients
+public/assets/js/bundle.js
+public/assets/css/style.css
