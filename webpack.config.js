@@ -1,28 +1,13 @@
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const path = require("path");
-var extractSCSS = new ExtractTextPlugin('../css/style.css');
+const webpackEntry = require('./resources/scripts/settings/webpack_entry.js'),
+      webpackOutput = require('./resources/scripts/settings/webpack_output.js'),
+      webpackLoaders = require('./resources/scripts/settings/webpack_loaders.js');
 
 module.exports = {
-  entry: './resources/scripts/js/main.js',
-  output: {
-    filename: 'bundle.js',
-    path: './public/assets/js/'
-  },
+  entry: webpackEntry.get(),
+  output: webpackOutput.get(),
   module: {
-    loaders: [
-      {
-      	test: /\.scss$/i,
-      	exclude: /(node_modules|style\.scss$)/,
-      	loader: 'style!css!sass'
-      },
-      {
-      	test: /style\.scss$/i,
-      	loader: extractSCSS.extract(['css','sass'])
-      }
-    ]
+    loaders: webpackLoaders.getLoaders()
   },
-  plugins: [
-  	extractSCSS
-  ],
+  plugins: [].concat(webpackLoaders.getUsedPlugins()),
   watch: true
 };
