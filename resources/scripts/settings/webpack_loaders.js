@@ -1,6 +1,5 @@
 // Module dependancies
-const ExtractTextPlugin = require("extract-text-webpack-plugin"),
-      filePaths = require('./paths.js');
+const webpack_scss = require('./webpack_scss.js');
 
 // Module
 Loaders = {
@@ -11,26 +10,12 @@ Loaders = {
   // Loaders
   loaders: [],
 
+  webpack_scss: webpack_scss.init_loader,
+
   init: function(){
 
-    // Moves the css into its own file
-    this.extractSCSS = new ExtractTextPlugin(
-      filePaths.relative_base_assets + 'css/' + filePaths.public_css_file
-    );
-
-    // The basic loaders
-    this.loaders = [
-
-      // Basic css loader/transpiler
-      {
-        test: /style\.scss$/i,
-        loader: this.extractSCSS.extract(['css','sass'])
-      }
-
-    ];
-
-    // the plugins used
-    this.plugins = [this.extractSCSS];
+    // init scss loaders
+    this.webpack_scss();
 
     // return this object
     return this;
