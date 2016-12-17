@@ -9,5 +9,6 @@ module.exports = {
     loaders: webpackLoaders.getLoaders()
   },
   plugins: [].concat(webpackLoaders.getUsedPlugins()),
-  watch: true
+  watch: true,
+  devtool: 'source-map'
 };
