@@ -9,6 +9,9 @@ const Loaders = {
   // Loaders
   loaders: [],
 
+  // Extra settings
+  extended_settings: [],
+
   // Sets the loader inits
   loader_inits: [
     require('./webpack_scss.js'),
@@ -28,14 +31,21 @@ const Loaders = {
 
   },
 
+  // Returns the used plugins
+  get: function () {
+    return this.loaders;
+  },
+
   // Returns the loaders
   getUsedPlugins: function () {
     return this.plugins;
   },
 
-  // Returns the used plugins
-  getLoaders: function () {
-    return this.loaders;
+  // Extends the base settings
+  extend: function (settings) {
+    for (var i = 0, l = this.extended_settings.length; i < l; i++) {
+      settings[this.extended_settings[i].name] = this.extended_settings[i].settings;
+    }
   }
 
 };
