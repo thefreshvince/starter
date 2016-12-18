@@ -10,7 +10,7 @@ module.exports = {
 
     // Moves the css into its own file
     let extractSCSS = new ExtractTextPlugin(
-      filePaths.relative_base_assets + 'css/' + filePaths.public_css_file
+      filePaths.relative_base_assets + 'css/' + filePaths.common_css_file
     );
 
     // The basic loaders
@@ -18,7 +18,9 @@ module.exports = {
 
       // Basic css loader/transpiler
       {
-        test: /style\.scss$/,
+        // Change to /common\.scss$/ if you want to load all at once
+        // However you should use the above/below pattern (see Vince)
+        test: /common\.scss$/,
         include: /resources\/styles\/scss/,
         loader: extractSCSS.extract([
           'css',
@@ -31,7 +33,7 @@ module.exports = {
       {
         test: /\.scss$/,
         include: /resources\/styles\/scss/,
-        exclude: /style\.scss$/,
+        exclude: /(style|common)\.scss$/,
         loader: 'style!css!postcss!sass'
       }
 

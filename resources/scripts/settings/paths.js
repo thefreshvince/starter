@@ -17,6 +17,7 @@ module.exports = (function(){
       // Output files
       this.public_js_file = 'bundle.[name].js'; //'bundle.js';
       this.public_css_file = 'style.css';
+      this.common_css_file = 'common.css';
 
     },
     paths = new Paths('./resources/','./public/');

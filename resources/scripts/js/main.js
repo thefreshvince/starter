@@ -1,9 +1,9 @@
 /**
- *
  *  Build our styles
- *
+ *  Change to style.scss if you want to compile all in one go
+ *  however it is not advised to do it like so due to performance purposes
  */
-require('../../styles/scss/style.scss');
+require('../../styles/scss/common.scss');
 
 /**
  *  Sets the filepath relative to the page
@@ -11,5 +11,10 @@ require('../../styles/scss/style.scss');
  */
 __webpack_public_path__ = '/assets/js/';
 
-// Use to dynamically require assets
-// require.ensure([], () => require('./components/_FILE.js'));
+/**
+ *
+ */
+require.ensure(
+  ['./below_the_fold.js'],
+  () => require('./below_the_fold.js')
+);

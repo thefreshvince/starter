@@ -1,0 +1,53 @@
+
+/*!
+Theme Name: Theme Name
+Theme URI: http://www.theurl.com/
+Description: This is the site description
+Author: NAME
+Version: 1.0
+Author URI: http://www.theurl.com
+Tags: custom
+*/
+
+/*
+
+  Config
+
+*/
+
+  @import "config/variables";
+  @import "config/mixins";
+
+/*
+
+  Vendor
+
+*/
+
+  @import "../../../node_modules/normalize.css/normalize.css";
+
+/*
+
+  Base
+
+*/
+
+  @import "base/fonts";
+  @import "base/formatting";
+  @import "base/global";
+  @import "base/layout";
+  @import "base/helpers";
+
+/*
+
+  Layout
+
+*/
+
+  @import "layouts/header";
+
+/*
+
+  Components
+
+*/
