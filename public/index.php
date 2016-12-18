@@ -20,6 +20,7 @@
 
   <?php include('parts/layouts/footer.php'); ?>
 
+  <script src="/assets/js/bundle.common.js" charset="utf-8"></script>
   <script src="/assets/js/bundle.main.js" charset="utf-8"></script>
 
 </body>

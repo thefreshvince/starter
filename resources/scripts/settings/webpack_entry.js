@@ -5,7 +5,7 @@ const filePaths = require('./paths.js');
 module.exports = {
   get: function () {
     return {
-      // common: [],
+      common: [],
       main: filePaths.source_entry_js,
     }
   }

@@ -8,6 +8,7 @@ class SectionComponents {
     this.section_components = document.getElementsByClassName(this.component_class_base),
     this.component_class_loaded = this.component_class_base + '--loaded',
     this.component_class_flag = this.component_class_base + '--component-';
+    this.components = [];
   }
 
   /**
@@ -16,6 +17,17 @@ class SectionComponents {
    *  so that webpack knows to chunk it!
    */
   requireComponents (component_name, el) {
+
+    // Set the component object
+    let component_obj = {
+      name: component_name,
+      el: el
+    };
+
+    // For debugging purposes
+    // alert('Loading a ' + component_name);
+
+    // Check to see if the class matches any of our components
     switch (component_name) {
       // case 'Class modifier identifier':
       //   require.ensure( ['./components/COMPONENT.js'], () => {
@@ -23,7 +35,17 @@ class SectionComponents {
       //     this.loadComponentSection(el);
       //   });
       //   break;
+
+      case 'footer':
+        require.ensure( ['./footers/_site.js'], (v) => {
+          require('./footers/_site.js');
+          this.loadComponentSection(component_obj);
+        });
+        break;
     }
+
+    // Add this component to the component list
+    this.components.push(component_obj);
   }
 
   /**
@@ -62,8 +84,8 @@ class SectionComponents {
    *  ex. add a class
    */
   loadComponentSection (section) {
-    alert('Loaded a new section');
-    section.classList.add(this.component_class_loaded);
+    console.log('Loaded a new ' + section.name + ' component!');
+    section.el.classList.add(this.component_class_loaded);
   }
 
 }

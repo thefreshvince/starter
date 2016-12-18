@@ -15,8 +15,7 @@ Tags: custom
 
 */
 
-  @import "config/variables";
-  @import "config/mixins";
+  @import "config/config";
 
 /*
 
@@ -61,4 +60,3 @@ Tags: custom
   @import "navs/social";
   // @import "sections/newsletter";
 	@import "sections/component";
-

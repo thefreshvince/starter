@@ -12,7 +12,7 @@
 
 ?>
 
-<footer class="footer">
+<footer class="footer section-component section-component--component-footer">
 
   <ul class="footer__nav fll ul--reset">
     <?php
