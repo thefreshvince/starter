@@ -14,7 +14,7 @@
 
 <footer class="footer">
 
-  <ul class="footer__nav fll ul-reset">
+  <ul class="footer__nav fll ul--reset">
     <?php
 
       // Loop through the navigation elements
