@@ -1,8 +1,7 @@
-// Module dependancies
-const webpack_scss = require('./webpack_scss.js');
+"use strict";
 
 // Module
-Loaders = {
+const Loaders = {
 
   // Plugins used by loaders
   plugins: [],
@@ -10,12 +9,19 @@ Loaders = {
   // Loaders
   loaders: [],
 
-  webpack_scss: webpack_scss.init_loader,
+  // Sets the loader inits
+  loader_inits: [
+    require('./webpack_scss.js'),
+    require('./webpack_js.js'),
+    require('./webpack_images.js')
+  ],
 
   init: function(){
 
-    // init scss loaders
-    this.webpack_scss();
+    // Init loaders
+    for (var i = 0, l = this.loader_inits.length; i < l; i++) {
+      this.loader_inits[i].init_loader(this);
+    }
 
     // return this object
     return this;

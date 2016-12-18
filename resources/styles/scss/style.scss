@@ -9,6 +9,8 @@ Author URI: http://www.theurl.com
 Tags: custom
 */
 
+body{ background-image: url('../../images/screen.png'); }
+
 /*
 
   Config
@@ -59,4 +61,4 @@ Tags: custom
   @import "components/sticky-elements";
   @import "navs/main";
   @import "navs/social";
-  @import "sections/newsletter";
+  // @import "sections/newsletter";

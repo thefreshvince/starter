@@ -6,6 +6,7 @@ module.exports = {
   get: function () {
     return {
       common: [],
-      bundle: filePaths.source_entry_js,
+      main: filePaths.source_entry_js,
+    }
   }
 }

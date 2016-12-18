@@ -5,6 +5,7 @@ module.exports = (function(){
       this.relative_base = '../../';
       this.relative_base_assets = this.relative_base + 'assets/';
       this.public_assets = this.output_base + 'assets/';
+      this.resources = './resources/';
 
       // Source files
       this.source_entry_js = entry_base + 'scripts/js/main.js';
@@ -14,7 +15,7 @@ module.exports = (function(){
       this.public_js = this.public_assets + 'js/';
 
       // Output files
-      this.public_js_file = '[name].bundle.js'; //'bundle.js';
+      this.public_js_file = 'bundle.[name].js'; //'bundle.js';
       this.public_css_file = 'style.css';
 
     },

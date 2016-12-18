@@ -6,7 +6,8 @@ module.exports = {
   get: function () {
     return{
       filename: filePaths.public_js_file,
-      path: filePaths.public_js
+      path: './public/assets/js/',
+      chunkFilename: 'chunks/chunk.[id].js'
     };
   }
 }

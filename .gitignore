@@ -1,5 +1,4 @@
 node_modules
 .DS_Store
 ingredients
-public/assets/js/
-public/assets/css/
+public/assets/
