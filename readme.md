@@ -1,3 +1,4 @@
 ##todo
-- Add Compiled JS to bundler
-- add ftp uploader https://www.npmjs.com/package/easy-ftp, 
+- Add ftp uploader
+- Refine common chunks
+- Look into list of loaders and add what could help the workflow

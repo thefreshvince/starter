@@ -2,14 +2,16 @@
 	"ingredients": [
 		{
 			"type": "html",
-			"output_type": "html",
+			"output_type": "php",
 			"components_as_dirs": true,
-			"path": "/public/parts/"
+			"component_as_dir": true,
+			"path": "/public/parts/components/"
 		},
 		{
 			"type": "scss",
 			"components_as_dirs": true,
-			"path": "/resources/styles/scss/",
+			"component_as_dir": true,
+			"path": "/resources/components/",
 			"prefix": "_",
 			"import": {
 				"name": "style.scss",
@@ -19,7 +21,8 @@
 		{
 			"type": "js",
 			"components_as_dirs": true,
-			"path": "/resources/scripts/js/",
+			"component_as_dir": true,
+			"path": "/resources/components/",
 			"prefix": "_"
 		}
 	]
