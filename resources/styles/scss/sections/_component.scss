@@ -1,0 +1,17 @@
+/*
+
+	COMPONENT SECTION
+
+*/
+
+.section-component{
+	opacity: 0;
+	transition: $transition-default;
+
+	&__{
+	}
+
+	&--loaded{
+		opacity: 1;
+	}
+}

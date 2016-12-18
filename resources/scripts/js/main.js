@@ -12,9 +12,9 @@ require('../../styles/scss/common.scss');
 __webpack_public_path__ = '/assets/js/';
 
 /**
- *
+ *  Grab the below the fold assets
  */
 require.ensure(
-  ['./below_the_fold.js'],
+  [],
   () => require('./below_the_fold.js')
 );
