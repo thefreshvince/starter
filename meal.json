@@ -3,14 +3,14 @@
 		{
 			"type": "html",
 			"output_type": "html",
-			"components_as_dirs": true,
-			"component_as_dir": true,
+			"component_types_as_dirs": true,
+			"components_as_dirs": false,
 			"path": "/public/parts/"
 		},
 		{
 			"type": "scss",
-			"components_as_dirs": true,
-			"component_as_dir": true,
+			"component_types_as_dirs": true,
+			"components_as_dirs": false,
 			"path": "/resources/styles/scss/",
 			"prefix": "_",
 			"import": {
@@ -20,8 +20,8 @@
 		},
 		{
 			"type": "js",
-			"components_as_dirs": true,
-			"component_as_dir": true,
+			"component_types_as_dirs": true,
+			"components_as_dirs": false,
 			"path": "/resources/scripts/js/",
 			"prefix": "_"
 		}
