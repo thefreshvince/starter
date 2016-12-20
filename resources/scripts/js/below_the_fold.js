@@ -1,5 +1,7 @@
 
-import { ImageLoader } from './components/ImageLoader';
+// Import modules
+import { ImageLoader } from './modules/ImageLoader';
+import { ComponentList } from './modules/ComponentList';
 
 // init our section components class
 class SectionComponents {
@@ -13,6 +15,7 @@ class SectionComponents {
     this.component_class_loaded = this.component_class_base + '--loaded',
     this.component_class_flag = this.component_class_base + '--component-';
     this.components = [];
+    this.componentList = new ComponentList().getComponent;
   }
 
   /**
@@ -25,28 +28,15 @@ class SectionComponents {
     // Set the component object
     let component_obj = {
       name: component_name,
-      el: el
+      el: el,
+      start_time: new Date().getTime()
     };
 
     // For debugging purposes
     // alert('Loading a ' + component_name);
 
-    // Check to see if the class matches any of our components
-    switch (component_name) {
-      // case 'Class modifier identifier':
-      //   require.ensure( ['./components/COMPONENT.js'], () => {
-      //     require('./components/COMPONENT.js');
-      //     this.loadComponentSection(el);
-      //   });
-      //   break;
-
-      case 'footer':
-        require.ensure( ['./footers/_site.js'], (v) => {
-          require('./footers/_site.js');
-          this.loadComponentSection(component_obj);
-        });
-        break;
-    }
+    // Load up the new component
+    this.componentList(component_obj);
 
     // Add this component to the component list
     this.components.push(component_obj);
@@ -90,15 +80,24 @@ class SectionComponents {
   loadComponentSection (section) {
 
     // Get the section and create a new image loader object
-    let image_loader = new ImageLoader(section.el);
-
-    // Let the console know we loaded the section
-    console.log('Loaded a new ' + section.name + ' component!');
+    let image_loader = new ImageLoader(section.el),
+        start_time = !section.start_time ? new Date().getTime() : section.start_time ;
 
     // Check images in section and load the section
     // after they have loaded
     image_loader.loadImages( e => {
+
+      // Sets the end time
+      let end_time = new Date().getTime();
+
+      // Let the console know we loaded the section
+      console.log('Loaded a new ' + section.name + ' component!');
+      console.log('Loaded in: ' + ((end_time - start_time) / 1000) + 's' );
+      console.log('============================================');
+
+      // Add the loaded class
       section.el.classList.add(this.component_class_loaded);
+
     });
   }
 

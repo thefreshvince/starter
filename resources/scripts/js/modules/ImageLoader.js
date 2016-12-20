@@ -15,6 +15,9 @@ export class ImageLoader {
    */
   constructor (el) {
 
+    // Set the element
+    this.el = el;
+
     // Get images
     this.imgs = el.getElementsByTagName('img');
 
@@ -34,7 +37,13 @@ export class ImageLoader {
     }
 
     // Check if the images have loaded
-    imagesloaded( this.imgs, { background: true }, cb);
+    let loader = imagesloaded( this.el, { background: true }, cb);
+
+    // Check progress of images in section
+    // loader.on('progress', (instance, image) => {
+    //   let result = image.isLoaded ? 'loaded' : 'broken';
+    //   console.log( 'image is ' + result + ' for ' + image.img.src );
+    // });
 
     // return self
     return this;
