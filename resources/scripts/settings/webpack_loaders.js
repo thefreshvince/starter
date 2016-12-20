@@ -16,7 +16,8 @@ const Loaders = {
   loader_inits: [
     require('./webpack_scss.js'),
     require('./webpack_js.js'),
-    require('./webpack_images.js')
+    require('./webpack_images.js'),
+    require('./webpack_fonts.js')
   ],
 
   init: function(){

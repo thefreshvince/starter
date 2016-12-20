@@ -9,11 +9,10 @@ module.exports = {
 
       // Basic css loader/transpiler
       {
-        test: /\.(jpe?g|png|gif|svg)$/i,
+        test: /\.(woff|woff2|eot|ttf)$/,
         include: /resources/,
         loaders: [
             'url?limit=10000&name=../img/[hash].[ext]',
-            'img?minimize&optimizationLevel=5&progressive=true'
         ]
       }
 
