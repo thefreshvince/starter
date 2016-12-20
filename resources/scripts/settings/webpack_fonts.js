@@ -9,7 +9,7 @@ module.exports = {
 
       // Basic css loader/transpiler
       {
-        test: /\.(woff|woff2|eot|ttf)$/,
+        test: /\.(png|woff(2)?|eot|ttf|svg)(\?.+)?$/,
         include: /resources/,
         loaders: [
             'url?limit=10000&name=../img/[hash].[ext]',
