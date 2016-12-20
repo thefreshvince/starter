@@ -1,3 +1,7 @@
+
+import { ImageLoader } from './components/ImageLoader';
+
+// init our section components class
 class SectionComponents {
 
   /**
@@ -84,8 +88,18 @@ class SectionComponents {
    *  ex. add a class
    */
   loadComponentSection (section) {
+
+    // Get the section and create a new image loader object
+    let image_loader = new ImageLoader(section.el);
+
+    // Let the console know we loaded the section
     console.log('Loaded a new ' + section.name + ' component!');
-    section.el.classList.add(this.component_class_loaded);
+
+    // Check images in section and load the section
+    // after they have loaded
+    image_loader.loadImages( e => {
+      section.el.classList.add(this.component_class_loaded);
+    });
   }
 
 }
