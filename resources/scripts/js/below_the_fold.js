@@ -40,6 +40,7 @@ class SectionComponents {
 
     // Add this component to the component list
     this.components.push(component_obj);
+
   }
 
   /**
